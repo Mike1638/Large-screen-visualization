@@ -3,6 +3,7 @@ import './home.scss';
 import imagehd from '../images/header.png'
 import {Echart1} from '../components/echarts-1'
 import {Echart2} from '../components/echarts-2'
+import {Echart3} from '../components/echarts-3'
 
 export const Home = () => {
   return (
@@ -10,10 +11,12 @@ export const Home = () => {
       <header style={{backgroundImage: `url(${imagehd})`}}></header>
       <main>
       <section className='section1'>
-      <Echart1 />
-      <Echart2 />
+      <Echart1/>
+      <Echart2/>
       </section>
-      <section className='section2 border'></section>
+      <section className='section2'>
+      <Echart3/>
+      </section>
       <section className='section3 border'></section>
       <section className='section4 border'></section>
       <section className='section5 border'></section>
