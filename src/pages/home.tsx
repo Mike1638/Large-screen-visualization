@@ -18,6 +18,9 @@ export const Home = () => {
       <section className='section4 border'></section>
       <section className='section5 border'></section>
       </main>
+      <footer>
+        <span>大数据平台</span>
+      </footer>
     </div>
   );
 };
