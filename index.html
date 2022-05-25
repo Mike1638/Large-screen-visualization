@@ -10,7 +10,7 @@
     <script>
       const clientwidth = document.documentElement.clientWidth;
       const clientheight = document.documentElement.clientHeight;
-      let pagewidth;
+      var pagewidth;
       let pageheight;
       if (clientwidth / clientheight > (16 / 9)) {
        pagewidth = clientheight * (16 / 9);
@@ -18,8 +18,6 @@
        pagewidth = clientwidth;
       }
       pageheight = pagewidth / (16 / 9);
-      console.log(pagewidth);
-      console.log(pageheight);
       const string = `<style> 
     html{
       font-size: ${pagewidth/100}px;

@@ -17,12 +17,13 @@
     grid-column-gap: px(28);
     grid-row-gap: px(28);
     padding-top: px(31);
-    > section {
+     .border {
       border: 1px solid #0764bc;
       border-radius: 4px;
       box-shadow: 0 0 2px 0 #0e325f,inset 0 0 2px 0 #0e325f;
       position: relative;
       background: #0c1139;
+      color: white;
       &::before {
         content: "";
         position: absolute;
@@ -55,6 +56,25 @@
     }
     > .section5 {
       grid-area: box5;
+    }
+    .管辖统计{
+      height: px(315);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items:center;
+       h2{
+        border: 1px solid #0a4e93;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        font-size: px(22);
+        padding:px(10) px(28);
+        line-height: px(22);
+      }
+      .echart{
+        width: 100%;
+        flex: 1;
+      }
     }
   }
 }
