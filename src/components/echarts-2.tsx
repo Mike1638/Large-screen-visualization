@@ -34,19 +34,11 @@ useEffect(()=>{
       },
       yAxis: {
         type: 'category',
-        data: ['城关区公安局','城关区公安局','城关区公安局','城关区公安局','城关区公安局','城关区公安局','城关区公安局','城关区公安局','城关区公安局', ],
+        data: ['七里河区公安局','城关区公安局','城关区公安局','城关区公安局','城关区公安局','城关区公安局','城关区公安局','城关区公安局','城关区公安局', ],
         axisLabel:{
             fontSize:fx(12),
             formatter:function(val){
-                if(val.length>3){
-                  let a = val.split('') 
-                  a.splice(3,0,'\n')
-                  let b = a.join('')
-                  return b
-                }else{
-                  return val
-                }
-                 
+               return val.replace('公安局','\n公安局')  
               }
         },
         axisTick: {
@@ -56,11 +48,31 @@ useEffect(()=>{
       series: [
         {
           type: 'bar',
-          data: [18203, 23489, 29034, 104970, 131744, 630230,234223,345343,534555]
+          data: [118203, 123489, 229034, 104970, 131744, 630230,234223,345343,534555],
+          itemStyle:{
+            color:new echarts.graphic.LinearGradient(0,0,1,0,[
+              {offset:0,
+                color:'#1f33f9'
+              },
+              {offset:1,
+                color:'#039efd'
+              },
+            ])
+          }
         },
         {
           type: 'bar',
-          data: [19325, 23438, 31000, 121594, 134141, 681807,634223,341343,534355]
+          data: [119325, 223438, 331000, 521594, 134141, 681807,634223,341343,534355],
+          itemStyle:{
+            color:new echarts.graphic.LinearGradient(0,0,1,0,[
+              {offset:0,
+                color:'#b929e8'
+              },
+              {offset:1,
+                color:'#636fdf'
+              },
+            ])
+          }
         }
       ]
     };

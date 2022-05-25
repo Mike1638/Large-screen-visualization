@@ -107,10 +107,10 @@
         .papm11{
         position: absolute;
         left: px(-25);
-        bottom: px(3);  
+        bottom: px(1);  
           width: px(20);
           height: px(16);
-          background-color: red;
+          background: linear-gradient(90deg, rgba(31,51,249,1) 0%, rgba(3,158,253,1) 100%);
         }
       }
       .papm2{
@@ -122,10 +122,10 @@
         .papm22{
           position: absolute;
           left: px(-25);
-          bottom: px(3);  
+          bottom: px(1);  
             width: px(20);
             height: px(16);
-            background-color: red;
+            background: linear-gradient(90deg, rgba(185,41,232,1) 0%, rgba(99,111,223,1) 100%);
           }
       }
     }
