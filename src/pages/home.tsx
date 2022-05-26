@@ -4,6 +4,8 @@ import imagehd from '../images/header.png'
 import {Echart1} from '../components/echarts-1'
 import {Echart2} from '../components/echarts-2'
 import {Echart3} from '../components/echarts-3'
+import {Echart4} from '../components/echarts-4'
+import {Echart5} from '../components/echarts-5'
 
 export const Home = () => {
   return (
@@ -16,8 +18,11 @@ export const Home = () => {
       </section>
       <section className='section2'>
       <Echart3/>
+      <Echart4/>
       </section>
-      <section className='section3 border'></section>
+      <section className='section3'>
+      <Echart5/>
+      </section>
       <section className='section4 border'></section>
       <section className='section5 border'></section>
       </main>
