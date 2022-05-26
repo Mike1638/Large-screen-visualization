@@ -20,17 +20,6 @@ export const Echart5 =()=>{
   </tr>
  </thead>
  <tbody>
- <tr>
-    <td>2019</td>
-    <td>2</td>
-    <td>2</td>
-    <td>2</td>
-    <td>2</td>
-    <td>2</td>
-    <td>2</td>
-    <td>2</td>
-    <td>2</td>
-  </tr>
   <tr>
     <td>2020</td>
     <td>2</td>

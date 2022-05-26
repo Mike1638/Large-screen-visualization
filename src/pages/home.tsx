@@ -6,6 +6,7 @@ import {Echart2} from '../components/echarts-2'
 import {Echart3} from '../components/echarts-3'
 import {Echart4} from '../components/echarts-4'
 import {Echart5} from '../components/echarts-5'
+import {Echart6} from '../components/echarts-6'
 
 export const Home = () => {
   return (
@@ -23,7 +24,9 @@ export const Home = () => {
       <section className='section3'>
       <Echart5/>
       </section>
-      <section className='section4 border'></section>
+      <section className='section4'>
+      <Echart6/>
+      </section>
       <section className='section5 border'></section>
       </main>
       <footer>
