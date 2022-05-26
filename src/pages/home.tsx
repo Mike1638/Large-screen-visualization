@@ -7,6 +7,7 @@ import {Echart3} from '../components/echarts-3'
 import {Echart4} from '../components/echarts-4'
 import {Echart5} from '../components/echarts-5'
 import {Echart6} from '../components/echarts-6'
+import {Echart7} from '../components/echarts-7'
 
 export const Home = () => {
   return (
@@ -26,6 +27,14 @@ export const Home = () => {
       </section>
       <section className='section4'>
       <Echart6/>
+      <div className='年龄段分布 border'>
+        <h2>兰州市犯罪人员年龄段分布</h2>
+        <div className='年龄段分布三图'>
+          <div className='图'><Echart7/></div>
+          <div className='图'></div>
+          <div className='图'></div>
+        </div>
+      </div>
       </section>
       <section className='section5 border'></section>
       </main>
