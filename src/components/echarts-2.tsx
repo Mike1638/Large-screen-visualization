@@ -3,80 +3,109 @@ import * as echarts from 'echarts';
 const fx=(n)=>{return  n/ 2420 * (window as any).pagewidth}
 export const Echart2  =()=>{
 const divref = useRef(null)
+const myChart = useRef(null)
+const datas =[ 
+  {name:'七里河区公安局',2020:2,2021:3},
+  {name:'城关区公安局',2020:2,2021:3},
+  {name:'西固区公安局',2020:2,2021:3},
+  {name:'安宁区公安局',2020:2,2021:3},
+  {name:'红古区公安局',2020:2,2021:3},
+  {name:'永登河区公安局',2020:2,2021:3},
+  {name:'渝中区公安局',2020:2,2021:3},
+  {name:'新区公安局',2020:2,2021:3},
+]
 useEffect(()=>{
-    var myChart = echarts.init(divref.current);
-    var option;
-    option = {
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          type: 'shadow'
+  setInterval(()=>{
+    const newdatas =[ 
+      {name:'七里河区公安局',2020:Math.random()*10,2021:3},
+      {name:'城关区公安局',2020:2,2021:4},
+      {name:'西固区公安局',2020:2,2021:3},
+      {name:'安宁区公安局',2020:Math.random()*10,2021:3},
+      {name:'红古区公安局',2020:2,2021:3},
+      {name:'永登河区公安局',2020:2,2021:Math.random()*10},
+      {name:'渝中区公安局',2020:2,2021:3},
+      {name:'新区公安局',2020:Math.random()*10,2021:3},
+    ]
+    render(newdatas)
+  },3000)
+},[])
+const render = (datas)=>{
+  var option;
+  option = {
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+        type: 'shadow'
+      }
+    },
+    legend: {},
+    grid: {
+      left: '6%',
+      right: '4%',
+      bottom: '12%',
+      top:'5%',
+      containLabel: true
+    },
+    xAxis: {
+      type: 'value',
+      boundaryGap: [0, 0.01],
+      axisLabel:{
+          show:false,
+          fontSize:fx(12)
+      },
+      splitLine:{
+          show:false
+        },
+    },
+    yAxis: {
+      type: 'category',
+      data: datas.map(i=>i.name),
+      axisLabel:{
+          fontSize:fx(12),
+          formatter:function(val){
+             return val.replace('公安局','\n公安局')  
+            }
+      },
+      axisTick: {
+          show: false
+        },
+    },
+    series: [
+      {
+        type: 'bar',
+        data: datas.map(i=>i[2020]),
+        itemStyle:{
+          color:new echarts.graphic.LinearGradient(0,0,1,0,[
+            {offset:0,
+              color:'#1f33f9'
+            },
+            {offset:1,
+              color:'#039efd'
+            },
+          ])
         }
       },
-      legend: {},
-      grid: {
-        left: '6%',
-        right: '4%',
-        bottom: '12%',
-        top:'5%',
-        containLabel: true
-      },
-      xAxis: {
-        type: 'value',
-        boundaryGap: [0, 0.01],
-        axisLabel:{
-            show:false,
-            fontSize:fx(12)
-        },
-        splitLine:{
-            show:false
-          },
-      },
-      yAxis: {
-        type: 'category',
-        data: ['七里河区公安局','城关区公安局','城关区公安局','城关区公安局','城关区公安局','城关区公安局','城关区公安局','城关区公安局','城关区公安局', ],
-        axisLabel:{
-            fontSize:fx(12),
-            formatter:function(val){
-               return val.replace('公安局','\n公安局')  
-              }
-        },
-        axisTick: {
-            show: false
-          },
-      },
-      series: [
-        {
-          type: 'bar',
-          data: [118203, 123489, 229034, 104970, 131744, 630230,234223,345343,534555],
-          itemStyle:{
-            color:new echarts.graphic.LinearGradient(0,0,1,0,[
-              {offset:0,
-                color:'#1f33f9'
-              },
-              {offset:1,
-                color:'#039efd'
-              },
-            ])
-          }
-        },
-        {
-          type: 'bar',
-          data: [119325, 223438, 331000, 521594, 134141, 681807,634223,341343,534355],
-          itemStyle:{
-            color:new echarts.graphic.LinearGradient(0,0,1,0,[
-              {offset:0,
-                color:'#b929e8'
-              },
-              {offset:1,
-                color:'#636fdf'
-              },
-            ])
-          }
+      {
+        type: 'bar',
+        data: datas.map(i=>i[2021]),
+        itemStyle:{
+          color:new echarts.graphic.LinearGradient(0,0,1,0,[
+            {offset:0,
+              color:'#b929e8'
+            },
+            {offset:1,
+              color:'#636fdf'
+            },
+          ])
         }
-      ]
-    };
-    option && myChart.setOption(option);
+      }
+    ]
+  };
+  option && myChart.current.setOption(option);
+}
+useEffect(()=>{
+  myChart.current =echarts.init(divref.current)
+    render(datas)
 },[])
     return (
     <div className='破获排名 border'>

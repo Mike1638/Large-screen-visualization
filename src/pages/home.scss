@@ -9,19 +9,44 @@
     margin: 0 auto;
     height: px(99);
     background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 px(40);
+    > .name{
+      font-size: px(65);
+    }
   }
-  > footer{
-    border: 1px solid #2e54a3;
-    height: px(60);
-    margin-top:px(12);
-    color:#325cb1;
-    background: #0c1139;
-    font-size: px(22);
-    text-align: center;
-    line-height: px(60);
+  .border {
+    border: 1px solid #0764bc;
     border-radius: 4px;
     box-shadow: 0 0 2px 0 #0e325f,inset 0 0 2px 0 #0e325f;
+    position: relative;
+    background: #0c1139;
+    color: white;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      box-shadow: 
+      17px 0 0 -16px #0e325f,  //右边
+      -17px 0 0 -16px #0e325f,  //左边
+      0 17px 0 -16px #0e325f,  //下边
+      0 17px 0 -16px #0e325f, // 上边
+      9px 0 0 -8px #0d4483,  //右边
+      -9px 0 0 -8px #0d4483,  //左边
+      0 9px 0 -8px #0d4483,  //下边
+      0 -9px 0 -8px #0d4483; // 上边
+    }
   }
+
+
+
   > main {
     width: px(2420);
     margin: 0 auto;
@@ -81,6 +106,18 @@
     }
     > .section5 {
       grid-area: box5;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      > .row1 {
+        height: px(317);
+      }
+      > .row2 {
+        height: px(317);
+      }
+      > .row3 {
+        height: px(455);
+      }
     }
     .管辖统计{
       height: px(315);
@@ -235,6 +272,7 @@
       flex-direction: column;
       text-align: center;
       align-items: center;
+      position: relative;
      > h2{
       border: 1px solid #0a4e93;
       border-bottom-left-radius: 4px;
@@ -246,6 +284,12 @@
      .echart{
        width: 100%;
          flex: 1;
+      }
+      .area{
+        font-size: px(22);
+        position: absolute;
+        bottom: px(10);
+        right: px(10);
       }
     }
     .年龄段分布{
@@ -265,15 +309,232 @@
      .年龄段分布三图{
        height: px(300);
        width: 100%;
-       border:1px solid red;
+      //  border:1px solid red;
        padding: px(20) px(30);
        display: flex;
        flex-direction: row;
        .图{
-       border:1px solid red;
+      //  border:1px solid black;
        width:33%;
+      //  border: 1px solid yellow;
+       >.legendwrapper{
+        height: 100%;
+        width: 100%;
+       position: relative;
+       > .chart{
+        width: 100%;
+        height: 100%;
+        flex: 1;
+       }
+       >.legendname{
+        position:absolute;
+        position: absolute; top: 50%; left: 50%; 
+        transform: translate(-50%, -50%);
+        font-size:px(50);
+        color: #33a4fa; font-size: px(40); text-shadow: 0 0 px(20) #33a4fa;font-weight: bold;
+       }
+       >.legend{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-evenly;
+        align-items: center;
+        font-size: px(16);
+        >span{
+          &::before{
+            content: '';
+            display: block;
+            width: px(30);
+            height: px(15); 
+          }
+        }
+       }
+       }
+       >.agewrapper{
+        height: 100%;
+        width: 100%;
+        position: relative;
+        >.echart{
+          width: 100%;
+          height: 100%;
+          flex: 1;
+        }
+        >.agegroup{
+          position:absolute;
+          position: absolute; top: 50%; left: 50%; 
+          transform: translate(-50%, -50%);
+          font-size:px(41);
+          color: #33a4fa; font-size: px(40); text-shadow: 0 0 px(20) #33a4fa;font-weight: bold;
+        }
+        >.age{
+          display: flex;
+          flex-wrap:wrap;
+          justify-content:flex-start;
+          align-items: center;
+          font-size: px(18);
+          >span{
+            margin-left:px(8);
+            margin-right:px(8);
+            &::before{
+              content: '';
+              display: block;
+              width: px(20);
+              height: px(11); 
+            }
+          }
+        }
+       }
+       .犯罪年龄{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        .border{
+          >h2{
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            font-size: px(22);
+            padding:px(10) px(28);
+            line-height: px(22);
+            color:rgb(118, 176, 213); 
+            font-size: px(20);
+          }
+        }
+        .echart{
+          flex: 1;
+          width: 100%;
+          height: 100%;
+        }
+       }
        }
      }
+    }
+    .案发类型{
+      height: px(315);
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      >h2{
+        border: 1px solid #0a4e93;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        font-size: px(22);
+        padding:px(10) px(28);
+        line-height: px(22);
+      }
+      .charts{
+        width: 100%;
+        height: 100%;
+        display: flex;
+      }
+      .echart{
+        width: 50%;
+        height: 100%;
+      }
+      .row12{
+        width: 50%;
+        height: 84%;
+        position: relative;
+        .echart1{
+          width: 100%;
+          height: 100%;
+        }
+        .row12anjian{
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+         align-items: center;
+         font-size: px(25);
+         position: absolute;
+         bottom: px(-40);
+         right: px(10);
+          >span{
+            margin-left:px(10);
+            margin-right:px(10);
+            &::before{
+              content: '';
+              display: block;
+              width: px(20);
+              height: px(11); 
+            }
+          }
+        }
+      }
+    }
+    .案发街道{
+      height: px(315);
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      >h2{
+        border: 1px solid #0a4e93;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        font-size: px(22);
+        padding:px(10) px(28);
+        line-height: px(22);
+      }
+      .charts{
+        width: 100%;
+        height: 100%;
+        display: flex;
+      }
+      .echart{
+        border: 1px solid red;
+        width: 50%;
+        height: 100%;
+      }
+      .row21{
+        width: 50%;
+        height: 100%;
+        .echart1{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .作案手段{
+      height: px(315);
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      >h2{
+        border: 1px solid #0a4e93;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        font-size: px(22);
+        padding:px(10) px(28);
+        line-height: px(22);
+      }
+      table{
+        height: 100%;
+        margin-top:px(28);
+        margin-bottom:px(28);
+        border: 1px solid #0a4e93 ;
+        border-collapse: collapse;
+        font-size:px(21);              
+        thead{
+          th{
+           height: px(30);
+           border: 1px solid #0a4e93 ;
+           box-shadow: inset 0 0 px(60) 0 #1f3d85;
+          }
+        }
+        tbody{
+          >tr,td{
+            border: 1px solid #0a4e93 ;
+          }
+          td{
+            width: px(170);
+            height: px(29);
+            background: #1c2456;
+          }
+        }
+      }
     }
   }
 }
