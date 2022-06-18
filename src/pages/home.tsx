@@ -41,6 +41,7 @@ export const Home = () => {
       </section>
       <section className='section4'>
       <Echart6/>
+      
       <div className='年龄段分布 border'>
         <h2>兰州市犯罪人员年龄段分布</h2>
         <div className='年龄段分布三图'>

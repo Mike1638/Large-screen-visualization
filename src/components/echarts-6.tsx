@@ -40,6 +40,9 @@ export const Echart6 = ()=>{
             <div ref={divref} className="echart">
             </div>
             <div className="area">注意:此地图仅显示了中国的部分区域</div>
+            <div className='ring'>
+                <div className='radar'></div>
+            </div>
         </div>
     )
 }

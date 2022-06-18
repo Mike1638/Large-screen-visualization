@@ -38,36 +38,39 @@ export const Echart3 =()=>{
 ]
 useEffect(()=>{
   setInterval(()=>{
+    const random = ()=>{
+      return Math.random()
+    }
     const newdatas =[
       {
         name: '盗窃',
         type: 'line',
-        data: [0.1,0.2,0.3,0.4,0.5,0.6,Math.random(),Math.random(),Math.random()]
+        data: [0.1,0.2,0.3,0.4,0.5,0.6,random(),random(),random()]
       },
       {
         name: '诈骗',
         type: 'line',
-        data: [0.15, 0.36,0.27,0.45,0.54,0.12,Math.random(),Math.random(),Math.random()]
+        data: [0.15, 0.36,0.27,0.45,0.54,0.12,random(),random(),random()]
       },
       {
         name: '抢劫',
         type: 'line',
-        data: [0.15, 0.36,0.27,0.25,0.54,0.12,Math.random(),Math.random(),Math.random()]
+        data: [0.15, 0.36,0.27,0.25,0.54,0.12,random(),random(),random()]
       },
       {
         name: '打人',
         type: 'line',
-        data: [0.15, 0.36, Math.random(),Math.random(),Math.random(),0.27,0.45,0.54,0.12]
+        data: [0.15, 0.36,random(),random(),random(),0.27,0.45,0.54,0.12]
       },
       {
         name: '斗殴',
         type: 'line',
-        data: [0.15, Math.random(),Math.random(),Math.random(), 0.34,0.27,0.45,0.54,0.12]
+        data: [0.15,random(),random(),random(), 0.34,0.27,0.45,0.54,0.12]
       },
       {
         name: '打架',
         type: 'line',
-        data: [Math.random(),Math.random(),Math.random(),0.36, 0.24,0.27,0.45,0.54,0.12]
+        data: [Math.random(),random(),random(),0.36, 0.24,0.27,0.45,0.54,0.12]
         },
     ]
     render(newdatas)

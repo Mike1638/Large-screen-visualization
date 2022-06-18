@@ -291,7 +291,70 @@
         bottom: px(10);
         right: px(10);
       }
+        > .ring {
+          border: 1px solid #0c2939;
+          position: absolute;
+          bottom: px(36);
+          left: px(74);
+          width: px(100);
+          height: px(100);
+          border-bottom: none;
+          border-radius: 50%;
+          overflow: hidden;
+          animation: spin infinite 5s linear;
+          > .radar {
+            border: 2px solid #103142;
+            position: absolute;
+            width: px(57);
+            height: px(57);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            &::before {
+              content: '';
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: px(34);
+              height: px(34);
+              border: 2px solid #082132;
+              border-radius: 50%;
+            }
+            &::after {
+              content: '';
+              position: absolute;
+              top: px(-14);
+              left: 50%;
+              transform: translateX(-50%);
+              width: px(1);
+              height: px(40);
+              z-index: 1;
+              background: rgb(180, 5, 5);
+              border-radius: 50%;
+              box-shadow: 0 0 5px 1px red,
+              -3px -10px 5px 1px red,
+              -7px -15px 10px 1px red,
+              -3px -3px 10px 1px red,
+              -7px -7px 20px 1px red,
+              -11px -11px 30px 1px red,
+              -11px -11px 40px 1px red,
+              -11px -11px 30px 1px red,
+              -11px -11px 30px 1px red;
+            }
+          }
+          @keyframes spin {
+            from {
+              transform: rotate(0);
+            }
+            to {
+              transform: rotate(360deg);
+            }
+          }
+      }
     }
+    
     .年龄段分布{
       height: px(390);
       display: flex;

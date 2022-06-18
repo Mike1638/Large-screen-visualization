@@ -1,24 +1,41 @@
 import React, { useEffect, useRef } from "react";
 import * as echarts from 'echarts'
 const fx=(n)=>{return  n/ 2420 * (window as any).pagewidth}
-const colors = ['#F46064', '#F38E1C', '#1CDB7C', '#8D70F8', '#33A4FA'];
 export const Echart12 =()=>{
-    const divref =useRef(null)
-    const colors = ['#F46064', '#F38E1C', '#1CDB7C', '#8D70F8', '#33A4FA'];
-  const data = [
-    {value: 0.08, name: '东岗路'},
-    {value: 0.06, name: '段家滩'},
-    {value: 0.11, name: '雁北'},
-    {value: 0.09, name: '五泉山'},
-    {value: 0.12, name: '中山路'},
-    {value: 0.06, name: '庆阳路'},
-    {value: 0.08, name: '武都路'},
-    {value: 0.08, name: '酒泉路'},
-    {value: 0.08, name: '天水路'},
+  const divref =useRef(null)
+  const myChart =useRef(null)
+  const datas = [
+    {value: 0.08, name: '测试一'},
+    {value: 0.06, name: '测试二'},
+    {value: 0.11, name: '测试三'},
+    {value: 0.09, name: '测试四'},
+    {value: 0.12, name: '测试五'},
+    {value: 0.06, name: '测试六'},
+    {value: 0.08, name: '测试七'},
+    {value: 0.08, name: '测试八'},
+    {value: 0.08, name: '测试九'},
   ];
-    useEffect(()=>{
-        var myChart = echarts.init(divref.current);
-        var option;
+  useEffect(()=>{
+  setInterval(()=>{
+    const random = ()=>{
+      return parseFloat((Math.random()* 1000 / 10000).toString()).toFixed(3)  
+     }
+    const newdatas = [
+      {value: random(), name: '测试一'},
+      {value: random(), name: '测试二'},
+      {value: random(), name: '测试三'},
+      {value: random(), name: '测试四'},
+      {value: random(), name: '测试五'},
+      {value: random(), name: '测试六'},
+      {value: random(), name: '测试七'},
+      {value: random(), name: '测试八'},
+      {value: random(), name: '测试九'},
+    ];
+    render(newdatas)
+  },2000)
+  },[])
+  const render = (datas)=>{
+    var option;
         option = {
             grid: {
                 x: fx(50),
@@ -41,7 +58,7 @@ export const Echart12 =()=>{
         itemWidth: fx(10),
         itemHeight: fx(10),
         formatter(name) {
-          const value = data.find(i => i.name === name)?.value * 100 + '%';
+          const value = (datas.find(i => i.name === name)?.value * 100).toFixed(1)  + '%';
           return name + ' ' + value;
         }
       },
@@ -52,7 +69,7 @@ export const Echart12 =()=>{
           radius: '80%',
           label: {show: false},
           labelLine: {show: false},
-          data: data,
+          data: datas,
           emphasis: {
             itemStyle: {
               shadowBlur: 10,
@@ -63,7 +80,11 @@ export const Echart12 =()=>{
         }
       ]
     }
-        option && myChart.setOption(option);    
+        option && myChart.current.setOption(option);    
+  }
+    useEffect(()=>{
+       myChart.current = echarts.init(divref.current);
+      render(datas)  
     },[]) 
     return(
         <div className="row21">
