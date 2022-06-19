@@ -20,7 +20,7 @@ export const Echart6 = ()=>{
             mapType: 'CN', // 自定义扩展图表类型
             label: {show: false, color: 'white'},
             itemStyle: {
-              areaColor: '#010D3D',
+              areaColor: '#172c68',
               borderColor: '#404a59',
               emphasis: {
                 label: {color: 'white'},

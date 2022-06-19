@@ -83,7 +83,7 @@ export const Echart12 =()=>{
         option && myChart.current.setOption(option);    
   }
     useEffect(()=>{
-       myChart.current = echarts.init(divref.current);
+      myChart.current = echarts.init(divref.current);
       render(datas)  
     },[]) 
     return(
