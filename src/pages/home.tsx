@@ -22,7 +22,7 @@ export const Home = () => {
       <header className='border'>
         <Clock></Clock>
         <div className='name'>网络公安合成作战平台</div>
-        <div>
+        <div className='item'>
           <span> 
              <svg className="icon" aria-hidden="true">
                 <use xlinkHref="#icon-weizhixiangqing"></use>
