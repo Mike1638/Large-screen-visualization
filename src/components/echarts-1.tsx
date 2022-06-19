@@ -18,7 +18,7 @@ export const  Echart1 =()=> {
   useEffect(()=>{
      setInterval(()=>{
       const random = ()=>{
-           return Math.random() * 50  
+           return (Math.random() * 50).toFixed(1)  
       }
       const newdatas = [
         {name:'测试一区',number:random()},

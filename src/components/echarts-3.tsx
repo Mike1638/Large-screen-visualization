@@ -39,7 +39,7 @@ export const Echart3 =()=>{
 useEffect(()=>{
   setInterval(()=>{
     const random = ()=>{
-      return Math.random()
+      return (Math.random()).toFixed(1)
     }
     const newdatas =[
       {
@@ -80,16 +80,17 @@ const render =(datas)=>{
   myChart.current.setOption({
     legend: {
         data: datas.map(i=>i.name),
-        bottom: fx(6),
-        itemWidth: fx(30),
-        itemHeight: fx(15),
+        bottom: fx(2),
+        right:fx(3),
+        itemWidth: fx(27),
+        itemHeight: fx(12),
         textStyle:{
             color: 'white',
             fontSize:fx(16)
         }
       },
       grid: {
-        left: '3%',
+        left: '4%',
         right: '9%',
         bottom: '20%',
         top:'10%',
@@ -112,7 +113,7 @@ const render =(datas)=>{
         axisLabel: {
             fontSize:fx(12),
             formatter(val) {
-            return val * 100 + '%';
+            return (val * 100).toFixed(1) + '%';
           }
         }
       },

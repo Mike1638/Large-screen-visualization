@@ -1,0 +1,30 @@
+{
+  "id": "3473458",
+  "name": "大屏React",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2076344",
+      "name": "位置详情",
+      "font_class": "weizhixiangqing",
+      "unicode": "e8ab",
+      "unicode_decimal": 59563
+    },
+    {
+      "icon_id": "22613460",
+      "name": "晴天",
+      "font_class": "qingtian",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "25716506",
+      "name": "空气温度",
+      "font_class": "kongqiwendu",
+      "unicode": "ea33",
+      "unicode_decimal": 59955
+    }
+  ]
+}

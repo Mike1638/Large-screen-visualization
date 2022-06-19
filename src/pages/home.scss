@@ -5,6 +5,7 @@
   flex-direction: column;
   flex: 1;
   > header {
+   
     width: px(2420);
     margin: 0 auto;
     height: px(99);
@@ -15,8 +16,10 @@
     justify-content: space-between;
     align-items: center;
     padding:0 px(40);
+    color: #33a4fa;text-shadow: 0 0 px(30) #33a4fa;font-weight: bold;
     > .name{
       font-size: px(65);
+      color: #33a4fa; text-shadow: 0 0 px(20) #33a4fa;font-weight: bold;
     }
   }
   .border {
@@ -600,4 +603,14 @@
       }
     }
   }
+}
+.icon {
+  width: px(30);
+  height: px(28);
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+  margin-right: px(6);
+  margin-left: px(16);
+  color:#333333;
 }

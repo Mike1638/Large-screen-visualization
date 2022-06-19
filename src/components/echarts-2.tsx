@@ -16,15 +16,18 @@ const datas =[
 ]
 useEffect(()=>{
   setInterval(()=>{
+    const random = ()=>{
+      return (Math.random()*10).toFixed(1)
+    }
     const newdatas =[ 
-      {name:'测试八区公安局',2020:Math.random()*10,2021:3},
+      {name:'测试八区公安局',2020:random(),2021:3},
       {name:'测试七区公安局',2020:2,2021:4},
       {name:'测试六区公安局',2020:2,2021:3},
-      {name:'测试五区公安局',2020:Math.random()*10,2021:3},
+      {name:'测试五区公安局',2020:random(),2021:3},
       {name:'测试四区公安局',2020:2,2021:3},
-      {name:'测试三区公安局',2020:2,2021:Math.random()*10},
+      {name:'测试三区公安局',2020:2,2021:random()},
       {name:'测试二区公安局',2020:2,2021:3},
-      {name:'测试一区公安局',2020:Math.random()*10,2021:3},
+      {name:'测试一区公安局',2020:random(),2021:3},
     ]
     render(newdatas)
   },3000)

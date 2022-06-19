@@ -1,5 +1,6 @@
 import React from 'react';
 import './home.scss';
+import "../font/iconfont.css"
 import {Clock} from "../components/clock"
 import {Echart1} from '../components/echarts-1'
 import {Echart2} from '../components/echarts-2'
@@ -22,9 +23,24 @@ export const Home = () => {
         <Clock></Clock>
         <div className='name'>网络公安合成作战平台</div>
         <div>
-          <span>Suzhou </span>
-          <span>34°C </span>
-          <span>Sunny</span>
+          <span> 
+             <svg className="icon" aria-hidden="true">
+                <use xlinkHref="#icon-weizhixiangqing"></use>
+             </svg>
+            Suzhou 
+            </span>
+          <span>
+              <svg className="icon" aria-hidden="true">
+                <use xlinkHref="#icon-kongqiwendu"></use>
+              </svg>
+            34°C 
+            </span>
+          <span>
+             <svg className="icon" aria-hidden="true">
+                <use xlinkHref="#icon-qingtian"></use>
+              </svg>
+            Sunny
+            </span>
         </div>
       </header>
       <main>
@@ -75,4 +91,3 @@ export const Home = () => {
     </div>
   );
 };
-

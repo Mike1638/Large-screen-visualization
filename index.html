@@ -12,23 +12,24 @@
       const clientheight = document.documentElement.clientHeight;
       var pagewidth;
       let pageheight;
-      if (clientwidth / clientheight > (16 / 9)) {
-       pagewidth = clientheight * (16 / 9);
+      if (clientwidth / clientheight > 16 / 9) {
+        pagewidth = clientheight * (16 / 9);
       } else {
-       pagewidth = clientwidth;
+        pagewidth = clientwidth;
       }
       pageheight = pagewidth / (16 / 9);
       const string = `<style> 
     html{
-      font-size: ${pagewidth/100}px;
+      font-size: ${pagewidth / 100}px;
     }
-    </style>`
+    </style>`;
       document.write(string);
     </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script src="/src/iconfont.js"></script>
     <script>
       root.style.height = pageheight + "px";
       // root.style.width = pagewidth + "px";
